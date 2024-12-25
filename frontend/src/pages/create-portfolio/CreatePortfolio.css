@@ -1,0 +1,75 @@
+.create-portfolio-container {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.create-portfolio-container .sync-btn {
+  background-color: #ccff00;
+  border: 1px solid #ccff00;
+  color: #000000;
+  font-family: "Quicksand", sans-serif;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.create-portfolio-container .sync-btn:hover {
+  background-color: #c0f000;
+  border-color: #2f2f2f;
+  color: #2f2f2f;
+}
+
+.add-holding-form {
+  max-width: 75%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.create-portfolio-container .holdings-btn {
+  text-align: left;
+}
+
+.create-portfolio-container .holding-group {
+  margin-bottom: 20px;
+}
+
+.holdings-table {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 75%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+body {
+  overflow-y: auto;
+}

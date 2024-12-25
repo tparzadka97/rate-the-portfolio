@@ -1,0 +1,5 @@
+asgiref==3.8.1
+certifi @ file:///private/tmp/python-certifi-20231118-5270-132s65u/certifi-2023.11.17
+Django==5.1.4
+python-dotenv==1.0.1
+sqlparse==0.4.4
