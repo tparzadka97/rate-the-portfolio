@@ -20,16 +20,46 @@ function CreatePortfolio() {
 
   const navigate = useNavigate();
 
-  const handleSyncWithRobinhood = (event) => {
-    // Mock API sync with Robinhood (replace with real API call)
-    const robinhoodData = [
-      { type: "stock", name: "AAPL", amount: 100 },
-      { type: "crypto", name: "BTC", amount: 0.5 },
-      { type: "cash", name: "USD", amount: 2000 },
-    ];
-    setHoldings(robinhoodData);
-    setIsSynced(true);
-    event.target.blur();
+  function getCSRFToken() {
+    const csrfToken = document.cookie
+      .split(";")
+      .find((cookie) => cookie.trim().startsWith("csrftoken="));
+    return csrfToken ? csrfToken.split("=")[1] : null;
+  }
+
+  const handleSyncWithRobinhood = async (event) => {
+    event.preventDefault();
+
+    try {
+      const userCredentials = {
+        username: "",
+        password: "",
+      };
+      const csrfToken = getCSRFToken();
+
+      const response = await fetch("/portfolio/sync-robinhood/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
+        },
+        body: JSON.stringify(userCredentials),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setHoldings(data.holdings);
+        setIsSynced(true);
+        setFormError("");
+      } else {
+        const errorData = await response.json();
+        console.error("Sync failed:", errorData.error);
+        setFormError("Failed to sync with Robinhood. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setFormError("An error occurred while syncing with Robinhood.");
+    }
   };
 
   const handleAddHolding = (event) => {

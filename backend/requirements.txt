@@ -1,5 +1,22 @@
 asgiref==3.8.1
-certifi @ file:///private/tmp/python-certifi-20231118-5270-132s65u/certifi-2023.11.17
+black==24.10.0
+certifi==2024.12.14
+cffi==1.17.1
+charset-normalizer==3.4.1
+click==8.1.8
+cryptography==44.0.0
 Django==5.1.4
+django-cors-headers==4.6.0
+djangorestframework==3.15.2
+idna==3.10
+mypy-extensions==1.0.0
+packaging==24.2
+pathspec==0.12.1
+platformdirs==4.3.6
+pycparser==2.22
+pyotp==2.9.0
 python-dotenv==1.0.1
-sqlparse==0.4.4
+requests==2.32.3
+robin-stocks==3.3.0
+sqlparse==0.5.3
+urllib3==2.3.0
