@@ -18,10 +18,15 @@ function Home() {
       <div className="home-container">
         <h1 className="home-text">Rate the Portfolio</h1>
         <div className="button-container">
-          <Button onClick={() => navigateTo("/create")}>
+          <Button variant="outline-dark" onClick={() => navigateTo("/create")}>
             Create a Portfolio
           </Button>
-          <Button onClick={() => navigateTo("/search")}>View Portfolios</Button>
+          <Button
+            variant="outline-dark"
+            onClick={() => navigateTo("/portfolios")}
+          >
+            Browse Portfolios
+          </Button>
         </div>
       </div>
     </div>

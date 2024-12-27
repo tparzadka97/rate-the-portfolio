@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 function AppNavbar() {
   return (
-    <Navbar bg="light" expand="sm">
+    <Navbar expand="sm">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Rate the Portfolio
